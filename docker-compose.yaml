@@ -1,0 +1,12 @@
+services:
+  ubuntu-box:
+    build: .
+    container_name: my_ubuntu_container
+    stdin_open: true
+    tty: true
+    ports:
+      - "18789:18789"  # This opens the door for your web link
+    volumes:
+      - ~/my_data:/data
+    working_dir: /data
+    restart: unless-stopped
